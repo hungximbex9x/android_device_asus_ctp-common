@@ -118,9 +118,9 @@ PRODUCT_PACKAGES += \
 	dristat \
 	drmstat
 
-# Marshmallow Compatibility Library
+# Nougat Compatibility Library
 PRODUCT_PACKAGES += \
-	libmmcompat
+	libncompat
 
 # MultiDisplay
 PRODUCT_PACKAGES += \

@@ -16,9 +16,9 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_SHARED_LIBRARIES := libicuuc libicui18n
-LOCAL_MODULE := libmmcompat
+LOCAL_MODULE := libncompat
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := \
-	libmmcompat.c \
+	libncompat.c \
 	icu53.c
 include $(BUILD_SHARED_LIBRARY)
