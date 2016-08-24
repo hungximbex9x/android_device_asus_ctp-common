@@ -27,7 +27,7 @@ LOCAL_SRC_FILES:= \
 LOCAL_MODULE:= libmultidisplay
 LOCAL_MODULE_TAGS := optional
 LOCAL_SHARED_LIBRARIES := libui libcutils libutils libbinder
-LOCAL_CFLAGS := -DLOG_TAG=\"MultiDisplay\"
+LOCAL_CFLAGS := -DLOG_TAG=\"MultiDisplay\" -w
 
 ifeq ($(ENABLE_IMG_GRAPHICS),true)
     LOCAL_SRC_FILES += drm_hdmi.cpp
