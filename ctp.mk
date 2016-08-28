@@ -47,7 +47,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-	Snap \
+	Camera2 \
 	bspcapability
 
 # Health Deamon

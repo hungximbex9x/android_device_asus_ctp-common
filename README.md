@@ -1,7 +1,7 @@
 Clovertrail Device Files
 ========================
 
-This repository contains the Clovertrail common device files for Android Marshmallow build.
+This repository contains the Clovertrail common device files for Android Nougat build.
 
 ## Contributors ##
 [//]: # (If you have contributed to this project, put your name down here. Follow the ** Alphabetical Order ** !)
