@@ -47,7 +47,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-	Camera2 \
+	Snap \
 	bspcapability
 
 # Health Deamon
@@ -207,6 +207,11 @@ PRODUCT_PACKAGES += \
 	screencap \
 	procmem \
 	procrank
+
+# Features from Android Nougat
+PRODUCT_PACKAGES += \
+	Browser2 \
+	Screencast
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.debuggable=1

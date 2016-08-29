@@ -103,9 +103,6 @@ TARGET_RECOVERY_FSTAB := device/asus/ctp-common/blobs/raw/ota.fstab
 # PowerHAL
 TARGET_POWERHAL_VARIANT := clovertrail
 
-# Radio
-BOARD_PROVIDES_LIBRIL := true
-
 # Font
 EXTENDED_FONT_FOOTPRINT := true
 
