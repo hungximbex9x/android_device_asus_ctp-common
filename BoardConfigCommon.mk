@@ -68,12 +68,14 @@ BUILD_ARM_FOR_X86 := true
 
 # IMG graphics
 ENABLE_IMG_GRAPHICS := true
+COMMON_GLOBAL_CFLAGS += -DASUS_ZENFONE2_LP_BLOBS
 HWUI_IMG_FBO_CACHE_OPTIM := true
 
 # IMG Graphics: System's VSYNC phase offsets in nanoseconds
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 
+COMMON_GLOBAL_CFLAGS += -DWORKAROUND_BUG_10194508
 BOARD_EGL_CFG := device/asus/ctp-common/blobs/raw/egl.cfg
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -81,6 +83,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 MAX_EGL_CACHE_ENTRY_SIZE := 65536
 MAX_EGL_CACHE_SIZE := 1048576
+COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 
 # enabled to carry out all drawing operations performed on a View's canvas with GPU for 2D rendering pipeline.
 USE_OPENGL_RENDERER := true
