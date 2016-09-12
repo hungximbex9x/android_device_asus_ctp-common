@@ -69,6 +69,7 @@ BUILD_ARM_FOR_X86 := true
 
 # IMG graphics
 ENABLE_IMG_GRAPHICS := true
+BOARD_GLOBAL_CFLAGS += -DASUS_ZENFONE2_LP_BLOBS
 HWUI_IMG_FBO_CACHE_OPTIM := true
 
 # IMG Graphics: System's VSYNC phase offsets in nanoseconds
