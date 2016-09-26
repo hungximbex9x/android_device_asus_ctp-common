@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-TARGET_NO_KERNEL := true
-TARGET_NO_RECOVERY := true
+TARGET_NO_KERNEL := false
+TARGET_NO_RECOVERY := false
 
 TARGET_ARCH := x86
 TARGET_ARCH_VARIANT := atom
@@ -105,6 +105,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 #TARGET_RECOVERY_UPDATER_EXTRA_LIBS += liboempartitioning_static
 TARGET_OTA_ASSERT_DEVICE := a500cg,a501cg,aicp_a500cg,aicp_a501cg,ASUS_T00F,ASUS_T00J,a600cg,aicp_a600cg,ASUS_T00G,T00F,T00F1,T00G,T00J,T00J1
 TARGET_RECOVERY_FSTAB := device/asus/ctp-common/blobs/raw/ota.fstab
+BLOCK_BASED_OTA:=false
 
 # PowerHAL
 TARGET_POWERHAL_VARIANT := clovertrail
