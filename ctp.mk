@@ -50,8 +50,9 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+        camera.redhookbay \
 	Camera2 \
-	bspcapability
+	bspcapability 
 
 # Health Deamon
 PRODUCT_PACKAGES += \
@@ -125,6 +126,10 @@ PRODUCT_PACKAGES += \
 # MultiDisplay
 PRODUCT_PACKAGES += \
 	libmultidisplay
+
+#Power
+PRODUCT_PACKAGES += \
+        power.redhookbay
 
 # Permissions
 PRODUCT_COPY_FILES += \
