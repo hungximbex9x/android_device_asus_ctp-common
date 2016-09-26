@@ -50,6 +50,11 @@ TARGET_USES_64_BIT_BINDER := true
 #Include
 TARGET_SPECIFIC_HEADER_PATH := device/asus/ctp-common/include
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_ctp
+TARGET_LIBINIT_DEFINES_FILE := device/asus/ctp-common/init/init_ctp.cpp
+TARGET_INIT_UMOUNT_AND_FSCK_IS_UNSAFE := true
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/ctp-common/bluetooth
