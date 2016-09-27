@@ -91,6 +91,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
 	keystore.clovertrail
 
+# Nougat Compatibility Library
+PRODUCT_PACKAGES += \
+	libncompat
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
 	drm.service.enabled=true \
