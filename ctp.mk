@@ -33,6 +33,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+        libshim_audio \
 	audio.a2dp.default \
 	audio.r_submix.default \
 	audio.usb.default \
@@ -50,9 +51,23 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+        libshim_camera \
         camera.redhookbay \
 	Camera2 \
 	bspcapability 
+
+# GPS
+PRODUCT_PACKAGES += \
+    libshim_gps
+
+# Radio
+PRODUCT_PACKAGES += \
+    libshim_mmgr \
+    libshim_tcs
+
+# Sensors
+PRODUCT_PACKAGES += \
+    libshim_sensors
 
 # Health Deamon
 PRODUCT_PACKAGES += \
@@ -119,9 +134,6 @@ PRODUCT_PACKAGES += \
 	dristat \
 	drmstat
 
-# Nougat Compatibility Library
-PRODUCT_PACKAGES += \
-	libncompat
 
 # MultiDisplay
 PRODUCT_PACKAGES += \
