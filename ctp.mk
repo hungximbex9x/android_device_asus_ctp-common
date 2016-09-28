@@ -69,6 +69,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_sensors
 
+#Media
+PRODUCT_PACKAGES += \
+    libshim_media
+
 # Health Deamon
 PRODUCT_PACKAGES += \
 	libhealthd.clovertrail \
