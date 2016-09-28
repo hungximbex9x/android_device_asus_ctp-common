@@ -31,10 +31,6 @@ extern "C" {
     status_t _ZN7android14SurfaceControl8setLayerEi( int32_t layer) {
 		return _ZN7android14SurfaceControl8setLayerEj( (uint32_t)layer);
 	}
-     status_t _ZN7android8hardware14ICameraService10descriptorE( uint32_t layer);
-     status_t _ZN7android9SingletonINS_13SensorManagerEE5sLockE( uint32_t layer);
-     status_t _ZN7android8hardware7ICamera11asInterfaceERKNS_2spINS_7IBinderEEE( uint32_t layer);
-     status_t _ZTVN7android8hardware10CameraInfoE( uint32_t layer);
 }
 
 // ---------------------------------------------------------------------------
