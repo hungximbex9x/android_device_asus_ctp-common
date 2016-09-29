@@ -260,6 +260,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/asus/ctp-common/ramdisk,root)
 
-
+PRODUCT_PACKAGES += \
+    update_verifier
 
 $(call inherit-product-if-exists, vendor/asus/ctp-common/ctp-common-vendor.mk)
