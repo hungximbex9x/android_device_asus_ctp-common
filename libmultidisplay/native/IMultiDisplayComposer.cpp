@@ -31,7 +31,6 @@ namespace intel {
 
 
 int BpMultiDisplayComposer::getMode(bool wait) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: getMode");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     data.writeInt32(wait == true ? 1 : 0);
@@ -40,7 +39,6 @@ int BpMultiDisplayComposer::getMode(bool wait) {
 }
 
 int BpMultiDisplayComposer::setModePolicy(int policy) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: setModePolicy");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     data.writeInt32(policy);
@@ -49,7 +47,6 @@ int BpMultiDisplayComposer::setModePolicy(int policy) {
 }
 
 int BpMultiDisplayComposer::notifyWidi(bool on) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: notifyWidi");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     data.writeInt32( on == true ? 1: 0);
@@ -58,7 +55,6 @@ int BpMultiDisplayComposer::notifyWidi(bool on) {
 }
 
 int BpMultiDisplayComposer::notifyMipi(bool on) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: notifyMipi");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     data.writeInt32( on == true ? 1: 0);
@@ -67,7 +63,6 @@ int BpMultiDisplayComposer::notifyMipi(bool on) {
 }
 
 int BpMultiDisplayComposer::prepareForVideo(int status) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: prepareForVideo");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     data.writeInt32(status);
@@ -76,7 +71,6 @@ int BpMultiDisplayComposer::prepareForVideo(int status) {
 }
 
 int BpMultiDisplayComposer::getVideoState() {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: getVideoState");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     remote()->transact(MDS_GET_VIDEO_STATE, data, &reply);
@@ -84,7 +78,6 @@ int BpMultiDisplayComposer::getVideoState() {
 }
 
 int BpMultiDisplayComposer::updateVideoInfo(const MDSVideoSourceInfo& info) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: updateVideoInfo");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     data.write(&info, sizeof(MDSVideoSourceInfo));
@@ -93,7 +86,6 @@ int BpMultiDisplayComposer::updateVideoInfo(const MDSVideoSourceInfo& info) {
 }
 
 int BpMultiDisplayComposer::notifyHotPlug() {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: notifyHotPlug");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     remote()->transact(MDS_NOTIFY_HOTPLUG, data, &reply);
@@ -101,7 +93,6 @@ int BpMultiDisplayComposer::notifyHotPlug() {
 }
 
 int BpMultiDisplayComposer::setHdmiPowerOff() {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: setHdmiPowerOff");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     remote()->transact(MDS_HDMI_POWER_OFF, data, &reply);
@@ -110,7 +101,6 @@ int BpMultiDisplayComposer::setHdmiPowerOff() {
 
 int BpMultiDisplayComposer::registerListener(
         sp<IExtendDisplayListener> listener, void *handle, const char* name, int msg) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: registerListener");
     Parcel data, reply;
     if (!name || msg <= 0) {
         ALOGE("%s: Parameter is null", __func__);
@@ -126,7 +116,6 @@ int BpMultiDisplayComposer::registerListener(
 }
 
 int BpMultiDisplayComposer::unregisterListener(void *handle) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: unregisterListener");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     data.writeInt32(reinterpret_cast<int32_t>(handle));
@@ -135,7 +124,6 @@ int BpMultiDisplayComposer::unregisterListener(void *handle) {
 }
 
 int BpMultiDisplayComposer::setHdmiModeInfo(int width, int height, int refresh, int interlace, int ratio) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: setHdmiModeInfo");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     data.writeInt32(width);
@@ -149,7 +137,6 @@ int BpMultiDisplayComposer::setHdmiModeInfo(int width, int height, int refresh, 
 
 int BpMultiDisplayComposer::getHdmiModeInfo(int* widthArray, int* heightArray,
         int* refreshArray, int* interlaceArray, int* ratioArray) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: getHdmiModeInfo");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     if (widthArray == NULL || heightArray == NULL
@@ -171,7 +158,6 @@ int BpMultiDisplayComposer::getHdmiModeInfo(int* widthArray, int* heightArray,
 }
 
 int BpMultiDisplayComposer::setHdmiScaleType(int Type) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: setHdmiScaleType");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     data.writeInt32(Type);
@@ -180,7 +166,6 @@ int BpMultiDisplayComposer::setHdmiScaleType(int Type) {
 }
 
 int BpMultiDisplayComposer::setHdmiScaleStep(int hValue, int vValue) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: setHdmiScaleStep");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     data.writeInt32(hValue);
@@ -190,7 +175,6 @@ int BpMultiDisplayComposer::setHdmiScaleStep(int hValue, int vValue) {
 }
 
 int BpMultiDisplayComposer::getHdmiDeviceChange() {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: getHdmiDeviceChange");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     remote()->transact(MDS_GET_HDMIDEVICE_CHANGE, data, &reply);
@@ -199,7 +183,6 @@ int BpMultiDisplayComposer::getHdmiDeviceChange() {
 
 
 int BpMultiDisplayComposer::getVideoInfo(int* dw, int* dh, int* fps, int* interlace) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: getVideoInfo");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     if (dw == NULL || dh == NULL
@@ -216,7 +199,6 @@ int BpMultiDisplayComposer::getVideoInfo(int* dw, int* dh, int* fps, int* interl
 }
 
 int BpMultiDisplayComposer::getDisplayCapability() {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: getDisplayCapability");
     Parcel data, reply;
     data.writeInterfaceToken(IMultiDisplayComposer::getInterfaceDescriptor());
     remote()->transact(MDS_GET_DISPLAY_CAPABILITY, data, &reply);
@@ -230,7 +212,6 @@ status_t BnMultiDisplayComposer::onTransact(uint32_t code,
                                             const Parcel& data,
                                             Parcel* reply,
                                             uint32_t flags) {
-    ALOGV("IMDS-Native: IMultiDisplayComposer.cpp: onTransact");
     switch (code) {
     case MDS_GET_MODE: {
         CHECK_INTERFACE(IMultiDisplayComposer, data, reply);

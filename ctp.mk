@@ -73,10 +73,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_media
 
+#ICU
+PRODUCT_PACKAGES += \
+    libshim_icu
+
+
 # Health Deamon
 PRODUCT_PACKAGES += \
 	libhealthd.clovertrail \
 	healthd
+
+#MDS
+PRODUCT_PACKAGES += \
+  libmultidisplay \
+  libmultidisplayjni \
+  com.intel.multidisplay.xml
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
