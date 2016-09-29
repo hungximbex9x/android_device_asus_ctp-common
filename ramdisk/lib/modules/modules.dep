@@ -1,0 +1,8 @@
+st_drv.ko:
+pvrsgx.ko: pnwdisp.ko
+rmi4.ko:
+bcm_bt_lpm.ko:
+pnwdisp.ko:
+bcm43362.ko:
+test_nx.ko:
+mac80211.ko:

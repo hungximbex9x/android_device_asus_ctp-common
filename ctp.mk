@@ -247,6 +247,19 @@ PRODUCT_PACKAGES += \
 	procrank
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
-	ro.debuggable=1
+	ro.build.asus.sku=WW \
+        ro.dalvik.vm.native.bridge=libhoudini.so \
+        ro.opengles.version=131072 \
+        dalvik.vm.image-dex2oat-Xms=64m \
+        dalvik.vm.image-dex2oat-Xmx=64m \
+        dalvik.vm.dex2oat-Xms=64m \
+        dalvik.vm.dex2oat-Xmx=512m \
+        ro.build.selinux=0 
+
+# Copy ramdisk to root
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/asus/ctp-common/ramdisk,root)
+
+
 
 $(call inherit-product-if-exists, vendor/asus/ctp-common/ctp-common-vendor.mk)
