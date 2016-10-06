@@ -8,3 +8,4 @@
 
 void _ZN7android8hardware14ICameraService10descriptorE() { }
 void _ZTVN7android8hardware10CameraInfoE() {}
+void _ZNK7android8String164sizeEv() {]
