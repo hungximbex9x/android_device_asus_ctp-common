@@ -125,22 +125,22 @@ BOARD_PROVIDES_LIBRIL := true
 EXTENDED_FONT_FOOTPRINT := true
 
 # StageFright
-#BUILD_WITH_FULL_STAGEFRIGHT := true
+BUILD_WITH_FULL_STAGEFRIGHT := true
 ENABLE_IMG_GRAPHICS := true
 
 # OpenMAX Interaction Layer Implementation for Intel VA API
-#BOARD_USES_MRST_OMX := true
-#BOARD_USES_WRS_OMXIL_CORE := true
-#TARGET_HAS_ISV := false
+BOARD_USES_MRST_OMX := true
+BOARD_USES_WRS_OMXIL_CORE := true
+TARGET_HAS_ISV := false
 
 # Video Acceleration API for Video Encoding and Decoding
-#INTEL_VA := true
-#BOARD_USE_LIBVA := true
-#BOARD_USE_LIBVA_INTEL_DRIVER := true
-#USE_INTEL_SECURE_AVC := true
+INTEL_VA := true
+BOARD_USE_LIBVA := true
+BOARD_USE_LIBVA_INTEL_DRIVER := true
+USE_INTEL_SECURE_AVC := true
 
 # Intel Moorestown Mix Library
-#BOARD_USE_LIBMIX := true
+BOARD_USE_LIBMIX := true
 
 # Minikin Text Layout Engine
 USE_MINIKIN := true
