@@ -31,6 +31,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.build.asus.sku=WW
 
+
+# ASUS properties
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.sys.sdcardfs=true
+
 # Audio
 PRODUCT_PACKAGES += \
         libshim_audio \
