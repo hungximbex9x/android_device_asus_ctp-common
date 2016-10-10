@@ -36,18 +36,9 @@ PRODUCT_PACKAGES += \
 	audio.primary.redhookbay \
 	libaudiopolicymanager
 
-PRODUCT_COPY_FILES += \
-	device/asus/ctp-common/blobs/raw/asound.conf:system/etc/asound.conf \
-	device/asus/ctp-common/blobs/raw/audio_policy.conf:system/etc/audio_policy.conf \
-	device/asus/ctp-common/blobs/raw/route_criteria.conf:system/etc/route_criteria.conf
-
-# Bluetooth
-PRODUCT_COPY_FILES += \
-	device/asus/ctp-common/blobs/raw/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
-
 # Camera
 PRODUCT_PACKAGES += \
-	Camera2 \
+	AsusCamera \
 	bspcapability
 
 # Common Apps
@@ -59,9 +50,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.dalvik.vm.isa.arm=x86 \
 	dalvik.vm.implicit_checks=none
-
-PRODUCT_COPY_FILES += \
-	device/asus/ctp-common/blobs/raw/powervr.ini:system/etc/powervr.ini
 
 # Houdini (ARM native bridge)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -76,9 +64,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	media.aac_51_output_enabled=true
 
 PRODUCT_COPY_FILES += \
-	device/asus/ctp-common/blobs/raw/media_codecs.xml:system/etc/media_codecs.xml \
-	device/asus/ctp-common/blobs/raw/media_profiles.xml:system/etc/media_profiles.xml \
-	device/asus/ctp-common/blobs/raw/wrs_omxil_components.list:system/etc/wrs_omxil_components.list
+	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+
+# Media: SDK and OMX IL components
+PRODUCT_PACKAGES += \
+	msvdx_bin \
+	topaz_bin
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -89,12 +81,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
 	radiooptions
 
-PRODUCT_COPY_FILES += \
-	device/asus/ctp-common/blobs/raw/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
-
 # DRM Library
 PRODUCT_PACKAGES += \
-	liblog
+	libdrm \
+	liblog \
+	dristat \
+	drmstat
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -128,13 +120,6 @@ PRODUCT_PACKAGES += \
 	wpa_supplicant \
 	wpa_supplicant.conf
 
-PRODUCT_COPY_FILES += \
-	device/asus/ctp-common/blobs/raw/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
-
-# STLport Library
-PRODUCT_PACKAGES += \
-	libstlport
-
 # TinyAlsa Binaries
 PRODUCT_PACKAGES += \
 	tinycap \
@@ -147,7 +132,8 @@ PRODUCT_PACKAGES += \
 	libva-android \
 	libva-tpi \
 	libva_videoencoder \
-	libva_videodecoder
+	libva_videodecoder \
+	libintelmetadatabuffer
 
 # Window Space Buffer Manager Library
 PRODUCT_PACKAGES += \
@@ -161,8 +147,8 @@ PRODUCT_PACKAGES += \
 	libOMXVideoDecoderWMV \
 	libOMXVideoEncoderAVC \
 	libOMXVideoEncoderH263 \
-	libOMXVideoEncoderMPEG4
-# 	libOMXVideoDecoderAVC
+	libOMXVideoEncoderMPEG4 \
+	libOMXVideoDecoderAVC
 
 # OpenMAX Interaction Layer Implementation for Intel VA API
 PRODUCT_PACKAGES += \
@@ -188,10 +174,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.epad.mount_point.usbdisk2=/storage/USBdisk2 \
 	ro.epad.mount_point.usbdisk3=/storage/USBdisk3 \
 	ro.epad.mount_point.usbdisk4=/storage/USBdisk4 \
-	ro.epad.mount_point.usbdisk5=/storage/USBdisk5
-
-PRODUCT_COPY_FILES += \
-	device/asus/ctp-common/blobs/raw/file_contexts:root/file_contexts
+	ro.epad.mount_point.usbdisk5=/storage/USBdisk5 \
+	media.stagefright.use-awesome=true \
+	persist.sys.media.use-awesome=true \
+	awesome.lateness=200 \
+	video.accelerate.hw=1
 
 PRODUCT_PACKAGES += \
 	dpstmgr

@@ -1,6 +1,6 @@
 int main(void) {
 	while (1) {
-		// do nothing
+		sleep(14400);
 	}
 
 	return 0;
