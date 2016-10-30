@@ -60,6 +60,18 @@ TARGET_INIT_UMOUNT_AND_FSCK_IS_UNSAFE := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/ctp-common/bluetooth
 
+# Camera
+INTEL_USE_CAMERA_UVC := true
+INTEL_VIDEO_XPROC_SHARING := true
+BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
+TARGET_PROVIDES_CAMERA_HAL := true
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+BOARD_GLOBAL_CFLAGS += -DMETADATA_CAMERA_SOURCE
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
+
 # Skip some proccess to speed up build
 BOARD_SKIP_ANDROID_DOC_BUILD := true
 BUILD_EMULATOR := false
