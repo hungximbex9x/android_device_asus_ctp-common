@@ -594,8 +594,7 @@ service surfaceflinger /system/bin/surfaceflinger
     group graphics
     onrestart restart zygote
     
-service 
-server /system/bin/audioserver
+service server /system/bin/audioserver
      class main
      user audioserver
      # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
