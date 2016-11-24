@@ -101,12 +101,38 @@ PRODUCT_PACKAGES += \
 	topaz_bin
 
 # RIL
+#PRODUCT_PROPERTY_OVERRIDES += \
+#	ro.ril.status.polling.enable=0 \
+#	rild.libpath=/system/lib/librapid-ril-core.so \
+#	ro.telephony.default_network=9
+
+#ro.ril.telephony.mqanelements=5 \
+#ro.telephony.ril.config=simactivation \
+
 PRODUCT_PROPERTY_OVERRIDES += \
+	ro.build.asus.sku=WW \
+	ro.asus.ui=1.0 \
+	ro.spid.gps.pmm=disabled \
+	ro.spid.gps.tty=ttyMFD3 \
+	ro.spid.gps.FrqPlan=FRQ_PLAN_26MHZ_2PPM \
+	ro.spid.gps.RfType=GL_RF_4752_BRCM_EXT_LNA \
+	persist.tel.lteOnGsmDevice=true \
+	ro.telephony.default_network=9 \
+	ro.asus.network.types=2 \
+	telephony.lteOnCdmaDevice=0 \
+	audiocomms.vp.fw_name=vpimg_es325.bin \
+	persist.tel.hot_swap.support=true \
 	ro.ril.status.polling.enable=0 \
+	persist.tcs.hw_filename=/etc/telephony/XMM7160_CONF_5.xml \
+	gsm.net.interface=rmnet0 \
 	rild.libpath=/system/lib/librapid-ril-core.so \
-	ro.ril.telephony.mqanelements=5 \
-	ro.telephony.ril.config=simactivation \
-	ro.telephony.default_network=2,1
+	persist.data_netmgrd_mtu=1410 \
+	persist.asus.bri_ratio=80 \
+	persist.telproviders.debug=0 \
+	persist.asus.cb.debug=0 \
+	persist.asus.message.gcf.mode=0 \
+	persist.asus.message.debug=0 \
+	persist.sys.modem.restart=12
 
 PRODUCT_PACKAGES += \
 	rild \
