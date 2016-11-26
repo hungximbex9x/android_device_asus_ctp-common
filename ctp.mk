@@ -110,8 +110,6 @@ PRODUCT_PACKAGES += \
 #ro.telephony.ril.config=simactivation \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.build.asus.sku=WW \
-	ro.asus.ui=1.0 \
 	ro.spid.gps.pmm=disabled \
 	ro.spid.gps.tty=ttyMFD3 \
 	ro.spid.gps.FrqPlan=FRQ_PLAN_26MHZ_2PPM \

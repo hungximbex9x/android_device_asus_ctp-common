@@ -1,6 +1,5 @@
 # Copyright 2006 The Android Open Source Project
 
-#ifeq ($(USE_MFLD_LIBRIL),true)
 ifeq ($(BOARD_PROVIDES_LIBRIL),true)
 
 LOCAL_PATH:= $(call my-dir)
@@ -29,7 +28,7 @@ ifeq ($(SIM_COUNT), 2)
     LOCAL_CFLAGS += -DANDROID_SIM_COUNT_2
 endif
 
-LOCAL_C_INCLUDES += $(TARGET_OUT_HEADER)/librilutils
+LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/librilutils
 LOCAL_C_INCLUDES += external/nanopb-c
 
 LOCAL_MODULE:= libril
@@ -61,4 +60,3 @@ LOCAL_MODULE:= libril_static
 include $(BUILD_STATIC_LIBRARY)
 endif # ANDROID_BIONIC_TRANSITION
 endif # BOARD_PROVIDES_LIBRIL
-#endif # USE_MFLD_LIBRIL

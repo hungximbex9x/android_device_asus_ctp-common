@@ -114,6 +114,8 @@ TARGET_POWERHAL_VARIANT := clovertrail
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
+#BOARD_MODEM_TYPE := xmm7260
+#BOARD_RIL_CLASS := ../../../device/asus/ctp-common/ril
 
 # Font
 EXTENDED_FONT_FOOTPRINT := true
