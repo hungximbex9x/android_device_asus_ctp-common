@@ -81,6 +81,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
 	keystore.clovertrail
 
+# Lights
+PRODUCT_PACKAGES += \
+	lights.clovertrail
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
 	drm.service.enabled=true \
@@ -101,14 +105,6 @@ PRODUCT_PACKAGES += \
 	topaz_bin
 
 # RIL
-#PRODUCT_PROPERTY_OVERRIDES += \
-#	ro.ril.status.polling.enable=0 \
-#	rild.libpath=/system/lib/librapid-ril-core.so \
-#	ro.telephony.default_network=9
-
-#ro.ril.telephony.mqanelements=5 \
-#ro.telephony.ril.config=simactivation \
-
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.spid.gps.pmm=disabled \
 	ro.spid.gps.tty=ttyMFD3 \

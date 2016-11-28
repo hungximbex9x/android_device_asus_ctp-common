@@ -26,6 +26,28 @@ struct local_power_module {
     struct power_module base;
 };
 
+#define BUF_SIZE 80
+
+static void sysfs_write(const char *path, const char *const s) {
+    char buf[BUF_SIZE];
+    int len;
+    int fd = open(path, O_WRONLY);
+
+    if (fd < 0) {
+        strerror_r(errno, buf, sizeof(buf));
+        ALOGE("Error opening %s: %s\n", path, buf);
+        return;
+    }
+
+    len = write(fd, s, strlen(s));
+    if (len < 0) {
+        strerror_r(errno, buf, sizeof(buf));
+        ALOGE("Error writing to %s: %s\n", path, buf);
+    }
+
+    close(fd);
+}
+
 static void power_init(struct power_module *) {
 }
 
@@ -39,7 +61,15 @@ static struct hw_module_methods_t power_module_methods = {
     .open = NULL,
 };
 
-void set_feature(struct power_module *module __unused, feature_t feature __unused, int state __unused) {
+void set_feature(struct power_module *module __unused, feature_t feature, int state)
+{
+    char tmp_str[BUF_SIZE];
+#ifdef TAP_TO_WAKE_NODE
+    if (feature == POWER_FEATURE_DOUBLE_TAP_TO_WAKE) {
+        snprintf(tmp_str, BUF_SIZE, "%d", state);
+        sysfs_write(TAP_TO_WAKE_NODE, tmp_str);
+    }
+#endif
 }
 
 struct local_power_module HAL_MODULE_INFO_SYM = {
@@ -49,7 +79,7 @@ struct local_power_module HAL_MODULE_INFO_SYM = {
             module_api_version: POWER_MODULE_API_VERSION_0_3,
             hal_api_version: HARDWARE_HAL_API_VERSION,
             id: POWER_HARDWARE_MODULE_ID,
-            name: "Clovertrail Power HAL",
+            name: "Mofd_v1 Power HAL",
             author: "The CyanogenMod Project",
             methods: &power_module_methods,
             dso: 0,

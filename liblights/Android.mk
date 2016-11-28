@@ -1,4 +1,4 @@
-# Copyright (C) 2015 The Android Open Source Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,25 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(TARGET_POWERHAL_VARIANT),clovertrail)
+LOCAL_PATH:= $(call my-dir)
 
-LOCAL_PATH := $(call my-dir)
-
-# HAL module implemenation stored in
-# hw/<POWERS_HARDWARE_MODULE_ID>.<ro.hardware>.so
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS += -Werror
+LOCAL_SRC_FILES := lights.c
+
+LOCAL_CFLAGS := -Werror
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
-LOCAL_SHARED_LIBRARIES := liblog libcutils libutils
-LOCAL_SRC_FILES := power.cpp
-LOCAL_MODULE := power.clovertrail
-
-ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
-LOCAL_CFLAGS += -DTAP_TO_WAKE_NODE=\"$(TARGET_TAP_TO_WAKE_NODE)\"
-endif
-
+LOCAL_SHARED_LIBRARIES := libhardware liblog
+LOCAL_MODULE := lights.clovertrail
 LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
 
-endif # TARGET_POWERHAL_VARIANT == clovertrail
+include $(BUILD_SHARED_LIBRARY)

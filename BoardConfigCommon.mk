@@ -64,16 +64,19 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # Dex-preoptimization: Speeds up initial boot
 WITH_DEXPREOPT := true
 
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_ctp
-TARGET_LIBINIT_DEFINES_FILE := device/asus/ctp-common/init/init_ctp.cpp
-TARGET_INIT_UMOUNT_AND_FSCK_IS_UNSAFE := true
+# Hardware
+BOARD_HARDWARE_CLASS := device/asus/ctp-common/cmhw
 
 # Healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.clovertrail
 
 # Houdini: enable ARM codegen for x86
 BUILD_ARM_FOR_X86 := true
+
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_ctp
+TARGET_LIBINIT_DEFINES_FILE := device/asus/ctp-common/init/init_ctp.cpp
+TARGET_INIT_UMOUNT_AND_FSCK_IS_UNSAFE := true
 
 # IMG graphics
 ENABLE_IMG_GRAPHICS := true
@@ -99,6 +102,9 @@ USE_OPENGL_RENDERER := true
 
 # Disable an optimization that causes rendering issues for us
 TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
+
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
 
 # SELinux
 HAVE_SELINUX := false
@@ -146,6 +152,9 @@ USE_MINIKIN := true
 BOARD_USES_HWCOMPOSER := true
 INTEL_HWC := true
 TARGET_SUPPORT_HWC_SYS_LAYER := true
+
+# Tap-to-Wake
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/pci0000:00/0000:00:00.3/i2c-0/0-0038/dclick_mode"
 
 # Wi-Fi
 BOARD_WLAN_DEVICE           := bcmdhd
